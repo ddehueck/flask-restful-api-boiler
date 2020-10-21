@@ -2,12 +2,11 @@ from config import Config
 from flask import Flask, Blueprint
 from flask_restful import Api
 from flask_cors import CORS
-from app.lib.errors import errors
 
 cors = CORS()
 
 api_bp = Blueprint('api', __name__)
-api = Api(api_bp, errors=errors)
+api = Api(api_bp)
 
 
 def create_app(config_class=Config):
